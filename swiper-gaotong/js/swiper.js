@@ -38,6 +38,8 @@ class Swiper {
     }
 
     init() {
+        this.pauseScroll();
+
         let teacherCardList = document.getElementById('teacher-card-list');
         let teacherCards = document.getElementsByClassName('teacher-card');
         let listWidth = teacherCardList.offsetWidth;
