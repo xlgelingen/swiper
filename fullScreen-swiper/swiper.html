@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper</title>
+    <link rel="icon" type="image/png" href="https://lhcdn.lanhuapp.com/dashboard/production/favicon.ico">
+    <link rel="stylesheet" href="../icon/iconfont/iconfont.css">
+    <style>
+        .teacher-carousel {
+            position: relative;
+            padding: 0 25px;
+            margin-top: 50px;
+            overflow: hidden;
+
+            .teacher-card-list {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+
+            .pre-arrow {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 25px;
+                height: 40px;
+                text-align: center;
+                transform: translateY(-50%);
+                background-color: #B1BDC6;
+                cursor: pointer;
+                z-index: 6;
+
+                .icon-zuojiantou {
+                    color: #FFFFFF;
+                    line-height: 40px;
+                }
+            }
+
+            .next-arrow {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: 25px;
+                height: 40px;
+                text-align: center;
+                transform: translateY(-50%);
+                background-color: #B1BDC6;
+                cursor: pointer;
+                z-index: 6;
+
+                .icon-youjiantou1 {
+                    color: #FFFFFF;
+                    line-height: 40px;
+                }
+            }
+        }
+
+        @media screen and (max-width: 960px) {
+            .teacher-carousel {
+                width: 960px;
+            }
+
+        }
+
+        .teacher-card {
+            flex: 0 0 auto;
+            width: 196px;
+            text-align: center;
+            font-size: 0;
+            /* margin-right: 42px; */
+
+            .teacher-name {
+                margin: 10px auto;
+                width: fit-content;
+                font-size: 14px;
+                font-family: Lantinghei SC;
+                font-weight: 600;
+                color: #333333;
+            }
+
+            .teacher-title {
+                font-size: 12px;
+                font-family: Lantinghei SC;
+                font-weight: 600;
+                color: #999999;
+                line-height: 18px;
+            }
+
+            .teacher-intro {
+                margin-top: 10px;
+                font-size: 12px;
+                font-family: Lantinghei SC;
+                font-weight: 600;
+                color: #666666;
+                line-height: 18px;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+
+        .teacher-card:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="teacher-carousel" id="teacher-carousel">
+        <div class="pre-arrow" id="pre-arrow">
+            <span class="iconfont icon-zuojiantou"></span>
+        </div>
+        <div class="next-arrow" id="next-arrow">
+            <span class="iconfont icon-youjiantou1"></span>
+        </div>
+
+        <div class="teacher-card-list" id="teacher-card-list">
+            <div class="teacher-card">
+                <img src="../images/t_1.jpg">
+                <div class="teacher-name">龙辉</div>
+                <div class="teacher-title">中科创达软件工程师</div>
+                <div class="teacher-title">Qualcomm开发者社区技术支持</div>
+                <div class="teacher-intro">从事Android驱动研究，专注于display驱动研发在嵌入式软件领域有自己专注擅长的地方专注于软件研发</div>
+            </div>
+            <div class="teacher-card">
+                <img src="../images/t_2.jpg">
+                <div class="teacher-name">肖淼森</div>
+                <div class="teacher-title">中科创达软件工程师</div>
+                <div class="teacher-title">Qualcomm开发者社区技术支持</div>
+                <div class="teacher-intro">软件研发从业3年，专注android驱动软件研发。</div>
+            </div>
+            <div class="teacher-card">
+                <img src="../images/t_3.png" width="78px" height="78px">
+                <div class="teacher-name">刘士君</div>
+                <div class="teacher-title">中科创达软件工程师</div>
+                <div class="teacher-title">Qualcomm开发者社区技术支持</div>
+                <div class="teacher-intro">从事Android驱动研究，专注于display驱动研发在嵌入式软件领域有自己专注擅长的地方专注于软件研发</div>
+            </div>
+            <div class="teacher-card">
+                <img src="../images/t_4.jpg">
+                <div class="teacher-name">王庆民</div>
+                <div class="teacher-title">中科创达软件工程师</div>
+                <div class="teacher-intro">软件开发从业7年，具有丰富的Android、linux等经验，精通Framework、多媒体和音视频</div>
+            </div>
+            <div class="teacher-card">
+                <img src="../images/t_5.jpg">
+                <div class="teacher-name">周龙</div>
+                <div class="teacher-title">中科创达软件工程师</div>
+                <div class="teacher-title">Qualcomm开发者社区技术支持</div>
+                <div class="teacher-intro">从事Android驱动研究，专注于display驱动研发在嵌入式软件领域有自己专注擅长的地方专注于软件研发</div>
+            </div>
+            <div class="teacher-card">
+                <img src="../images/t_6.png" width="78px" height="78px">
+                <div class="teacher-name">佘泽鹏</div>
+                <div class="teacher-title">微软中国</div>
+                <div class="teacher-title">平台技术顾问</div>
+                <div class="teacher-intro">从事Android驱动研究，专注于display驱动研发在嵌入式软件领域有自己专注擅长的地方专注于软件研发</div>
+            </div>
+            <div class="teacher-card">
+                <img src="../images/t_7.jpg">
+                <div class="teacher-name">张家杰</div>
+                <div class="teacher-title">中科创达软件工程师</div>
+                <div class="teacher-title">Qualcomm开发者社区技术支持</div>
+                <div class="teacher-intro">从事Android驱动研究，专注于display驱动研发在嵌入式软件领域有自己专注擅长的地方专注于软件研发</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class Swiper {
+            constructor() {
+                this.data = {
+                    index: 0,
+                    duration: 500,
+                    isLock: false,
+                    translateX: 0,
+                    defaultLength: null,
+                    listWidth: null,
+                    itemWidth: null,
+                    itemMargin: 0,
+                    timer: null,
+                }
+
+                this.nextArrow = this.nextArrow.bind(this);
+                this.preArrow = this.preArrow.bind(this);
+                this.init = this.init.bind(this);
+                this.playTime = this.playTime.bind(this);
+                this.pauseScroll = this.pauseScroll.bind(this);
+
+                this.init();
+                this.bind();
+            }
+
+            bind() {
+                let preArrow = document.getElementById('pre-arrow');
+                preArrow.addEventListener('click', this.preArrow);
+
+                let nextArrow = document.getElementById('next-arrow');
+                nextArrow.addEventListener('click', this.nextArrow);
+
+                //每1.5s自动切换，当鼠标移动到teacher-carousel里面，停止自动切换，当鼠标移出时，恢复自动切换
+                let teacherCarousel = document.getElementById('teacher-carousel');
+                teacherCarousel.addEventListener("mouseenter", this.pauseScroll);
+                teacherCarousel.addEventListener("mouseleave", this.playTime);
+
+                window.addEventListener('resize', this.init);
+            }
+
+            init() {
+                let teacherCardList = document.getElementById('teacher-card-list');
+                let teacherCards = document.getElementsByClassName('teacher-card');
+                let listWidth = teacherCardList.offsetWidth;
+                let cardItemWidth = teacherCards[0].offsetWidth;
+                let itemMargin = (listWidth - 4 * cardItemWidth) / 3;
+                for (let item of teacherCards) {
+                    item.style.marginRight = itemMargin + 'px';
+                }
+                let index = this.data.index;
+                let translateX = - ((cardItemWidth + itemMargin) * index);
+                this.data.defaultLength = teacherCards.length - 4;
+                this.data.itemWidth = cardItemWidth;
+                this.data.itemMargin = itemMargin;
+                this.data.translateX = translateX;
+                teacherCardList.style.transform = `translateX(${translateX}px)`;
+
+                this.playTime();
+            }
+
+            animateTo(begin, end, duration, changeCallback, finishCallback) {
+                let startTime = Date.now();
+                let self = this;  // 将 this 存储在变量中
+                requestAnimationFrame(function update() {
+                    let dateNow = Date.now();
+                    let time = dateNow - startTime;
+                    let value = self.linear(time, begin, end, duration);
+                    typeof changeCallback == 'function' && changeCallback(value);
+
+                    if (startTime + duration > dateNow) {
+                        requestAnimationFrame(update);
+                    } else {
+                        typeof finishCallback === 'function' && finishCallback(end);
+                    }
+                });
+            }
+
+            linear(time, begin, end, duration) {
+                return (end - begin) * time / duration + begin;
+            }
+
+            goIndex(index) {
+                let swiperDuration = this.data.duration;
+                let cardItemWidth = this.data.itemWidth;
+                let swiperLength = this.data.defaultLength;
+                let preArrow = document.getElementById('pre-arrow');
+                let nextArrow = document.getElementById('next-arrow');
+                if (index <= -1) {
+                    index = swiperLength;
+                }
+                if (index >= swiperLength + 1) {
+                    index = 0;
+                }
+
+
+                let itemMargin = this.data.itemMargin;
+                let beginTranslateX = this.data.translateX;
+                let endTranslateX = - ((cardItemWidth + itemMargin) * index);
+
+                let isLock = this.data.isLock;
+                if (isLock) return;
+                this.data.isLock = true;
+
+                let teacherCardList = document.getElementById('teacher-card-list');
+                this.animateTo(beginTranslateX, endTranslateX, swiperDuration, (value) => {
+                    teacherCardList.style.transform = `translateX(${value}px)`;
+                }, (value) => {
+
+                    teacherCardList.style.transform = `translateX(${value}px)`;
+                    this.data.index = index;
+                    this.data.translateX = value;
+
+                    this.data.isLock = false;
+                });
+            }
+
+            preArrow() {
+                let index = this.data.index;
+                this.goIndex(index - 1)
+            }
+
+            nextArrow() {
+                let index = this.data.index;
+                this.goIndex(index + 1);
+            }
+
+            playTime() {
+                let index = this.data.index;
+                let timer = setInterval(() => {
+                    this.nextArrow();
+                }, 1500);
+                this.data.timer = timer;
+            }
+
+            pauseScroll() {
+                clearInterval(this.data.timer);
+                this.data.timer = null;
+            }
+
+        }
+
+        const PAGE = {
+            init: function () {
+                this.initPage();
+            },
+
+            initPage: function () {
+                PAGE.swiper = new Swiper();
+            },
+        }
+
+        PAGE.init();
+    </script>
+
+</body>
+
+</html>
