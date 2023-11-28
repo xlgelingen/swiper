@@ -210,6 +210,8 @@
             }
 
             init() {
+                //每次触发resize时，关闭自动切换函数，防止因变化视口宽度而导致切换速度出现问题
+                this.pauseScroll();
                 let teacherCardList = document.getElementById('teacher-card-list');
                 let teacherCards = document.getElementsByClassName('teacher-card');
                 let listWidth = teacherCardList.offsetWidth;
@@ -254,8 +256,8 @@
                 let swiperDuration = this.data.duration;
                 let cardItemWidth = this.data.itemWidth;
                 let swiperLength = this.data.defaultLength;
-                let preArrow = document.getElementById('pre-arrow');
-                let nextArrow = document.getElementById('next-arrow');
+                // let preArrow = document.getElementById('pre-arrow');
+                // let nextArrow = document.getElementById('next-arrow');
                 if (index <= -1) {
                     index = swiperLength;
                 }
@@ -306,6 +308,18 @@
             pauseScroll() {
                 clearInterval(this.data.timer);
                 this.data.timer = null;
+            }
+
+            //防抖函数
+            debounce(func, delay) {
+                let timeout;
+                return function () {
+                    const context = this;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => {
+                        func.apply(context);
+                    }, delay);
+                };
             }
 
         }
